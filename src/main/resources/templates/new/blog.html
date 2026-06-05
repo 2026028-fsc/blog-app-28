@@ -17,7 +17,7 @@
         <a href="/new/blog"><input type="button" value="投稿"></a>
     </header>
     <h2>新規投稿</h2>
-    <form th:action="@{}" method="post">
+    <form th:action="@{/blogs}" method="post">
         <div><label for="title">タイトル<input type="text" id="title"></label></div>
         <div><label for="text">本文<input type="text" id="text"></label></div>
         <input type="submit" value="送信">
