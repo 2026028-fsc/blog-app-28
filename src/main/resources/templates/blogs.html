@@ -11,11 +11,12 @@
             Blog
         </h1>
         <a href="/home"><input type="button" value="ホーム"></a>
-        <a href="/blogs"><input type="button" value="一覧"></a>
+        <a href="/blogs"><input type="button" value="投稿一覧"></a>
         <a href="/new/blog"><input type="button" value="投稿"></a>
     </header>
     <h2>
       投稿一覧
     </h2>
+    <li th:each="blog:${blogs}"></li>
 </body>
 </html>

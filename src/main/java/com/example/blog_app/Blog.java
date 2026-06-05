@@ -1,14 +1,19 @@
 package com.example.blog_app;
 
+import java.time.LocalDateTime;
+
 public class Blog {
     private String text;
     private String title;
-    private Long id;
+    private int id;
+    private LocalDateTime dateTime;
 
-    public Blog(String text, String title,Long id) {
+    public Blog(String text, String title,int id,LocalDateTime datetime) {
         this.text = text;
         this.title = title;
         this.id=id;
+        this.dateTime=datetime;
+
     }
 
     public String getText() {
@@ -18,7 +23,10 @@ public class Blog {
     public String getTitle() {
         return title;
     }
-    public Long getId() {
+    public int getId() {
         return id;
+    }
+    public LocalDateTime getDateTime() {
+        return dateTime;
     }
 }
