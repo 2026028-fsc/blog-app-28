@@ -3,16 +3,16 @@ package com.example.blog_app;
 import java.time.LocalDateTime;
 
 public class Blog {
-    private String text;
     private String title;
+    private String text;
     private Integer id;
     private LocalDateTime dateTime;
 
-    public Blog(String text, String title,Integer id,LocalDateTime datetime) {
-        this.text = text;
+    public Blog(String title, String text, Integer id, LocalDateTime datetime) {
         this.title = title;
-        this.id=id;
-        this.dateTime=datetime;
+        this.text = text;
+        this.id = id;
+        this.dateTime = datetime;
 
     }
 
@@ -23,9 +23,11 @@ public class Blog {
     public String getTitle() {
         return title;
     }
+
     public Integer getId() {
         return id;
     }
+
     public LocalDateTime getDateTime() {
         return dateTime;
     }

@@ -14,11 +14,11 @@ public class BlogRepository {
     }
 
     public void save(Blog blog) {
-        jdbcClient.sql("INSERT INTO blogs (title, text) VALUES (?, ?)")
-                // .param(blog.getId())
-                .param(blog.getTitle())
-                .param(blog.getText())
-                // .param(blog.getDateTime())
+        jdbcClient.sql("INSERT INTO blogs (id,title, text,dateTime) values(:id, :title, :text, now())")
+                .param("id", blog.getId())
+                .param("title", blog.getTitle())
+                .param("text", blog.getText())
+                .param("dateTime", blog.getDateTime())
                 .update();
     }
 

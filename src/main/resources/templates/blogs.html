@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>投稿一覧</title>
 </head>
+
 <body>
-       <header>
+    <header>
         <h1>
             Blog
         </h1>
@@ -15,13 +17,18 @@
         <a href="/new/blog"><input type="button" value="投稿"></a>
     </header>
     <h2>
-      投稿一覧
+        投稿一覧
     </h2>
-    <li th:each="blog:${blogs}">
-          <form th:action="@{/blogs}" method="post"> 
-                <span th:text="${blog.title}">ここにタスクのタイトルが表示されます</span><br>
-                <small th:text="${blog.text}"></small>
-            </form>
+    <li>
+        <table>
+            <tr th:each="blog:${blogs}">
+                <td>
+                    <span th:text="${blog.title}">ここにタスクのタイトルが表示されます</span><br>
+                    <small th:text="${blog.text}"></small>
+                </td>
+            </tr>
+        </table>
     </li>
 </body>
+
 </html>

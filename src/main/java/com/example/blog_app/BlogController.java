@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-
-
 @Controller
 public class BlogController {
     private final BlogService blogService;
@@ -23,7 +21,7 @@ public class BlogController {
 
     @GetMapping("/blogs")
     public String blogs(Model model) {
-        model.addAttribute("tasks", blogService.findAll());
+        model.addAttribute("blogs", blogService.findAll());
         return "blogs";
     }
 
@@ -33,7 +31,7 @@ public class BlogController {
     }
 
     @PostMapping("/blogs")
-    public String POST(@ModelAttribute BlogForm blogForm) {
+    public String POST(BlogForm blogForm) {
         blogService.add(blogForm);
         return "redirect:/blogs";
     }
