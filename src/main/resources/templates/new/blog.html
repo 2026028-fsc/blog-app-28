@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新規投稿</title>
 </head>
+
 <body>
     <header>
         <h1>
             Blog
         </h1>
-        <input type="button" value="ホーム">
-        <input type="button" value="一覧">
-        <input type="button" value="投稿">
+        <a href="/home"><input type="button" value="ホーム"></a>
+        <a href="/blogs"><input type="button" value="一覧"></a>
+        <a href="/new/blog"><input type="button" value="投稿"></a>
     </header>
     <h2>新規投稿</h2>
     <form th:action="@{}" method="post">
-        <input type="text">
-        <input type="text">
-        <input type="submit" value="">
+        <div><label for="title">タイトル<input type="text" id="title"></label></div>
+        <div><label for="text">本文<input type="text" id="text"></label></div>
+        <input type="submit" value="送信">
     </form>
 </body>
+
 </html>
