@@ -24,12 +24,12 @@ public class BlogController {
     @GetMapping("/blogs")
     public String blogs(Model model) {
         model.addAttribute("tasks", blogService.findAll());
-        return "/blogs";
+        return "blogs";
     }
 
     @GetMapping("/new/blog")
-    public String newblog() {
-        return "/new/blog";
+    public String newblog(@ModelAttribute BlogForm blogForm) {
+        return "new/blog";
     }
 
     @PostMapping("/blogs")

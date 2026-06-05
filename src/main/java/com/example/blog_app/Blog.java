@@ -5,10 +5,10 @@ import java.time.LocalDateTime;
 public class Blog {
     private String text;
     private String title;
-    private int id;
+    private Integer id;
     private LocalDateTime dateTime;
 
-    public Blog(String text, String title,int id,LocalDateTime datetime) {
+    public Blog(String text, String title,Integer id,LocalDateTime datetime) {
         this.text = text;
         this.title = title;
         this.id=id;
@@ -23,7 +23,7 @@ public class Blog {
     public String getTitle() {
         return title;
     }
-    public int getId() {
+    public Integer getId() {
         return id;
     }
     public LocalDateTime getDateTime() {

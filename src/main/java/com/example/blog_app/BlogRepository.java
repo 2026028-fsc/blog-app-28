@@ -15,10 +15,10 @@ public class BlogRepository {
 
     public void save(Blog blog) {
         jdbcClient.sql("INSERT INTO blogs (title, text) VALUES (?, ?)")
-                .param(blog.getId())
+                // .param(blog.getId())
                 .param(blog.getTitle())
                 .param(blog.getText())
-                .param(blog.getDateTime())
+                // .param(blog.getDateTime())
                 .update();
     }
 

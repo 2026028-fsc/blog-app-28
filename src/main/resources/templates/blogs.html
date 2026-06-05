@@ -17,6 +17,11 @@
     <h2>
       投稿一覧
     </h2>
-    <li th:each="blog:${blogs}"></li>
+    <li th:each="blog:${blogs}">
+          <form th:action="@{/blogs}" method="post"> 
+                <span th:text="${blog.title}">ここにタスクのタイトルが表示されます</span><br>
+                <small th:text="${blog.text}"></small>
+            </form>
+    </li>
 </body>
 </html>
