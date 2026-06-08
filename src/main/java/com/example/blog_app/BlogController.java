@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -35,5 +36,9 @@ public class BlogController {
         blogService.add(blogForm);
         return "redirect:/blogs";
     }
-
+        @PostMapping("/blogs/{id}/delete")
+    public String delete(@PathVariable Long id) {
+        blogService.deleteById(id);
+        return "redirect:/blogs";
+    }
 }

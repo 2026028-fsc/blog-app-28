@@ -20,4 +20,8 @@ public class BlogService {
     public void add(BlogForm form) {
         blogRepository.save(new Blog(form.getTitle(), form.getText(), form.getId(), form.getDateTime()));
     }
+
+       public void deleteById(Long id) {
+        blogRepository.deleteById(id);
+    }
 }
