@@ -23,9 +23,9 @@
         <table>
             <tr th:each="blog:${blogs}">
                 <td class="contain">
-                    <a href="/blog">
+                    <a th:href="@{/blogs/{id}/delete(id=${blog.id})}">
                         <span th:text="${blog.title}">ここにタスクのタイトルが表示されます</span><br>
-                        <small th:text="${blog.text}"></small>
+                        <!-- <small th:text="${blog.text}"></small> -->
                         <form th:action="@{/blogs/{id}/delete(id=${blog.id})}" method="post">
                     </a>
                     <input type="submit" value="削除">

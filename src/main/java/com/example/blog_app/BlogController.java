@@ -26,6 +26,12 @@ public class BlogController {
         return "blogs";
     }
 
+    @GetMapping("/blog")
+    public String blog(Model model) {
+        model.addAttribute("blog", blogService.findAll());
+        return "blog";
+    }
+
     @GetMapping("/new/blog")
     public String newblog(@ModelAttribute BlogForm blogForm) {
         return "new/blog";
@@ -36,8 +42,15 @@ public class BlogController {
         blogService.add(blogForm);
         return "redirect:/blogs";
     }
-        @PostMapping("/blogs/{id}/delete")
+
+    @PostMapping("/blogs/{id}/delete")
     public String delete(@PathVariable Long id) {
+        blogService.deleteById(id);
+        return "redirect:/blogs";
+    }
+
+    @PostMapping("/blogs/{id}/delete")
+    public String find(@PathVariable Long id) {
         blogService.deleteById(id);
         return "redirect:/blogs";
     }

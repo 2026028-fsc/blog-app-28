@@ -28,6 +28,13 @@ public class BlogRepository {
                 .list();
     }
 
+    public List<Blog> find(Long id) {
+        return jdbcClient.sql("SELECT title, text,id,datetime FROM blogs WHERE id = :id")
+                .param("id", id)
+                .query(Blog.class)
+                .list();
+    }
+
     public void deleteById(Long id) {
         jdbcClient.sql("DELETE FROM blogs WHERE id = :id")
                 .param("id", id)
