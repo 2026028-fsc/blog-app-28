@@ -25,6 +25,7 @@
                 <td class="contain">
                     <a th:href="@{/blogs/{id}/find(id=${blog.id})}">
                         <span th:text="${blog.title}">ここにタスクのタイトルが表示されます</span><br>
+                        <span th:text="${blog.dateTime}">ここにタスクの登録日が表示されます</span><br>
                         <!-- <small th:text="${blog.text}"></small> -->
                     </a>
                     <form th:action="@{/blogs/{id}/delete(id=${blog.id})}" method="post">
