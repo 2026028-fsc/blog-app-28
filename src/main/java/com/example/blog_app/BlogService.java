@@ -16,7 +16,7 @@ public class BlogService {
         return blogRepository.findAll();
     }
 
-    public List<Blog> find(Long id) {
+    public Blog find(Long id) {
         return blogRepository.find(id);
     }
 

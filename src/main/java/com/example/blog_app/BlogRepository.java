@@ -28,11 +28,11 @@ public class BlogRepository {
                 .list();
     }
 
-    public List<Blog> find(Long id) {
+    public Blog find(Long id) {
         return jdbcClient.sql("SELECT title, text,id,datetime FROM blogs WHERE id = :id")
                 .param("id", id)
                 .query(Blog.class)
-                .list();
+                .single();
     }
 
     public void deleteById(Long id) {

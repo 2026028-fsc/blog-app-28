@@ -23,12 +23,12 @@
         <table>
             <tr th:each="blog:${blogs}">
                 <td class="contain">
-                    <a th:href="@{/blogs/{id}/delete(id=${blog.id})}">
+                    <a th:href="@{/blogs/{id}/find(id=${blog.id})}">
                         <span th:text="${blog.title}">ここにタスクのタイトルが表示されます</span><br>
                         <!-- <small th:text="${blog.text}"></small> -->
-                        <form th:action="@{/blogs/{id}/delete(id=${blog.id})}" method="post">
                     </a>
-                    <input type="submit" value="削除">
+                    <form th:action="@{/blogs/{id}/delete(id=${blog.id})}" method="post">
+                        <input type="submit" value="削除">
                     </form>
                 </td>
             </tr>
