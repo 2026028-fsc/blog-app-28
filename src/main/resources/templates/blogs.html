@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>投稿一覧</title>
 </head>
 
@@ -13,7 +14,7 @@
             Blog
         </h1>
         <a href="/home"><input type="button" value="ホーム"></a>
-        <a href="/blogs"><input type="button" value="投稿一覧"></a>
+        <a href="/blogs"><input type="button" value="一覧"></a>
         <a href="/new/blog"><input type="button" value="投稿"></a>
     </header>
     <h2>
@@ -24,8 +25,8 @@
             <tr th:each="blog:${blogs}">
                 <td class="contain">
                     <a th:href="@{/blogs/{id}/find(id=${blog.id})}">
-                        <span th:text="${blog.title}">ここにタスクのタイトルが表示されます</span><br>
-                        <span th:text="${blog.dateTime}">ここにタスクの登録日が表示されます</span><br>
+                        <span th:text="${blog.title}">ここにブログのタイトルが表示されます</span><br>
+                        <span th:text="${blog.dateTime}">ここにブログの登録日が表示されます</span><br>
                         <!-- <small th:text="${blog.text}"></small> -->
                     </a>
                     <form th:action="@{/blogs/{id}/delete(id=${blog.id})}" method="post">

@@ -1,0 +1,243 @@
+/* ==========================================================================
+   全体の設定（リセットと背景）
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    background-color: #f6f8fa; /* 明るく清潔感のある薄いグレー */
+    color: #333333;
+    line-height: 1.6;
+    padding-bottom: 60px;
+}
+
+/* ==========================================================================
+   ヘッダー（ナビゲーション）
+   ========================================================================== */
+header {
+    background-color: #ffffff;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* ほんのり影をつけて立体感を */
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-right: auto; /* タイトルを左端、ボタンを右端に寄せる */
+    letter-spacing: 1px;
+}
+
+/* ナビゲーションのボタンリンク */
+header a {
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+header input[type="button"] {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    color: #555555;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* ボタンにマウスを乗せたとき */
+header input[type="button"]:hover {
+    background-color: #3498db;
+    border-color: #3498db;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   メインコンテンツ（投稿一覧）
+   ========================================================================== */
+h2 {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    padding: 0 15px;
+    font-size: 20px;
+    color: #2c3e50;
+}
+
+/* 箇条書きの点を消し、中央に寄せる */
+li {
+    list-style: none;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* テーブル全体のスタイル */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px; /* 記事と記事の間に隙間を空ける */
+}
+
+/* 1つの記事（行）をカード風に見せる */
+.contain {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 記事にマウスを乗せたときに少し浮き上がらせる */
+.contain:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* リンクエリア（タイトルと日付） */
+.contain a {
+    text-decoration: none;
+    color: inherit;
+    flex-grow: 1; /* ボタン以外の領域を広くクリックできるように */
+    display: block;
+    padding-right: 20px;
+}
+
+/* ブログのタイトル */
+.contain span:first-of-type {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+/* ブログの登録日 */
+.contain span:last-of-type {
+    font-size: 12px;
+    color: #95a5a6;
+    display: block;
+}
+
+/* ==========================================================================
+   削除ボタン
+   ========================================================================== */
+.contain form {
+    margin: 0;
+}
+
+.contain input[type="submit"] {
+    background-color: transparent;
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+/* 削除ボタンにマウスを乗せたとき */
+.contain input[type="submit"]:hover {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   新規投稿フォームのスタイル（追加分）
+   ========================================================================== */
+
+/* フォーム全体を中央に寄せて、上品な白ボックスにする */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* 入力項目ごとの外枠（div） */
+form div {
+    margin-bottom: 24px;
+}
+
+/* 「タイトル」「本文」のラベル文字 */
+form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+/* 入力エリア（共通設定） */
+form input[type="text"],
+form textarea {
+    width: 100%;
+    margin-top: 6px; /* ラベルとの隙間 */
+    padding: 12px 16px;
+    font-size: 15px;
+    border: 1px solid #dcdde1;
+    border-radius: 8px;
+    background-color: #fbfbfc;
+    color: #333333;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    outline: none; /* デフォルトの青い枠線を消す */
+}
+
+/* 本文のテキストエリア（高さを広げて、右下のツマミで縦方向にだけ伸ばせるように） */
+form textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+/* 入力中に枠線の色をフワッと変える（フォーカス効果） */
+form input[type="text"]:focus,
+form textarea:focus {
+    border-color: #3498db;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1); /* ほんのり青い光を纏わせる */
+}
+
+/* 送信ボタン */
+form input[type="submit"] {
+    display: block;
+    width: 100%; /* 横いっぱいに広げて押しやすく */
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+/* 送信ボタンにマウスを乗せたとき */
+form input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* 送信ボタンをクリックした瞬間の手応え */
+form input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+image-area{
+    display: flex;
+}

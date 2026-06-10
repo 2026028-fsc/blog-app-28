@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>新規投稿</title>
 </head>
 
@@ -19,7 +20,7 @@
     <h2>新規投稿</h2>
     <form th:action="@{/blogs}" method="post">
         <div><label for="title">タイトル<input type="text" id="title" name="title"></label></div>
-        <div><label for="text">本文<input type="text" id="text" name="text"></label></div>
+        <div><label for="text">本文<textarea type="text" id="text" name="text"></textarea></label></div>
         <input type="submit" value="送信">
     </form>
 </body>
