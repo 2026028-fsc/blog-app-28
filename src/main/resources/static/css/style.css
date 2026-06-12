@@ -238,6 +238,8 @@ form input[type="submit"]:active {
     transform: scale(0.98);
 }
 
-image-area{
+.image-area{
     display: flex;
+    justify-content: center;
+    align-items: center; 
 }
